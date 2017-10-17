@@ -3,12 +3,12 @@
 import json, sys
 
 
-def detect_flow(url):
+def classify_flow(url):
     flow = {
         "url": url,
         "ops": "download()",
         "type": "image",
-        "label": {"detect": {"general_d": {"bbox": []}}},
+        "label": {"class": {"general": ""}},
         "source_url": ""
     }
     return flow
@@ -24,5 +24,5 @@ if __name__ == '__main__':
             urllist.append(url)
             line = content.readline()
 
-    r = '\n'.join([json.dumps(detect_flow(url)) for url in urllist])
-    with open(name+'.detect.json', 'w+') as f: f.write(r)
+    r = '\n'.join([json.dumps(classify_flow(url)) for url in urllist])
+    with open(name+'.classify.json', 'w+') as f: f.write(r)
