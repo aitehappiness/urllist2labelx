@@ -11,8 +11,14 @@ http://available_host/path3.jpg
 http://available_host/path4.jpg
 ```
 
-### gen detect jsonlist
+### generate detect jsonlist
 
 ```python
 python detect-init.py urltest.list
+```
+
+### generate classify jsonlist
+
+```python
+python classify-init.py urltest.list
 ```
